@@ -1,0 +1,51 @@
+﻿COMB(DF_POINT,      FR_DOT,          FR_D, FR_F)            // df = .
+COMB(DS_VIRG,       FR_COMM,         FR_D, FR_S)            // ds = ,
+COMB(SF_COLN,       FR_COLN,         FR_S, FR_F)            // sf = :
+COMB(SDF_SCLN,      FR_SCLN,         FR_S, FR_D, FR_F)      // sdf = ;
+
+COMB(KV_LCTL,       OSM(MOD_LCTL),          FR_C, FR_V)            // kv = LCTL
+COMB(XK_LSHF,       OSM(MOD_LSFT),          FR_X, FR_C)            // xk = LSHF
+COMB(XV_LALT,       OSM(MOD_LALT),          FR_X, FR_V)            // xv = LALT
+COMB(NZ_RCTRL,      OSM(MOD_RCTL),          FR_N, FR_Z)            // nz = RCTL
+COMB(Z2P_RSHF,      OSM(MOD_RSFT),          FR_Z, PSLASH)          // z: = RSHF
+COMB(N2P_RALT,      OSM(MOD_RALT),          FR_N, PSLASH)          // n: = RALT
+COMB(NZ2P_RCS,      S(KC_RCTL),             FR_N, FR_Z, PSLASH)    // nz: = RCTL + RSHF
+COMB(XKV_LCS,       S(KC_LCTL),             FR_X, FR_C, FR_V)      // xkv = LCTL + LSHF
+
+COMB(UI_PARO,       FR_LPRN,         FR_U, FR_I)            // ui = (
+COMB(IO_PARF,       FR_RPRN,         FR_I, FR_O)            // io = )
+
+COMB(HC_K,          FR_K,            FR_H, FR_C)            // hc = k
+
+
+// Godox combos
+COMB(AI_POINT_GODOX,      KC_V,          KC_A, KC_D)            // AI = .
+COMB(UA_VIRG_GODOX,       KC_G,          KC_S, KC_A)            // UA = ,
+COMB(TS_INTER_GODOX,      S(KC_N),       KC_J, KC_K)            // tc = ?
+COMB(TS_EXCAL_GODOX,      S(KC_Y),       KC_K, KC_COLON)       // sn = !
+
+COMB(EP_LCTL_GODOX,       OSM(MOD_LCTL), KC_T, KC_E)            // èp = LCTL
+COMB(YE_LSHF_GODOX,       OSM(MOD_LSFT), KC_X, KC_T)            // yè = LSHF
+COMB(YP_LALT_GODOX,       OSM(MOD_LALT), KC_X, KC_E)            // yp = LALT
+
+COMB(DZ_RCTL_GODOX,       OSM(MOD_RCTL), KC_I, KC_LBRC)     // dz = RCTL
+COMB(ZH_RSHF_GODOX,       OSM(MOD_RSFT), KC_LBRC, KC_DOT)   // zh = RSHF
+COMB(DH_RALT_GODOX,       OSM(MOD_RALT), KC_I, KC_DOT)          // dh = RALT
+
+COMB(VL_PARO_GODOX,       KC_4,          KC_U, KC_O)            // vl = (
+COMB(LM_PARF_GODOX,       KC_5,          KC_O, KC_QUOTE)        // lm = )
+
+
+// SUBS(JC_CH,         "ch",           KC_J, KC_C)          // jc = ch
+// COMB(KV_CTRL,       OSM(MOD_LCTL),   KC_K, KC_V)
+// COMB(XK_LSHF,       KC_LSFT,         KC_X, KC_K)
+
+// SUBS(JC_MENT,       "ment",          KC_J, KC_C)
+// SUBS(JL_ION,        "ion",           KC_J, KC_L)
+
+// test
+// SUBS(DE_ER,         "er",            KC_D, FR_E)
+// SUBS(FR_RE,         "re",            KC_F, KC_R)
+
+// COMB(KV_QUES,       FR_QUES,         KC_K, KC_V)            // kv = ?
+// COMB(XK_EXCL,       FR_EXLM,         KC_X, KC_K)            // xk = !
