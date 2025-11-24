@@ -127,7 +127,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,     FR_HASH,    FR_EXLM,    FR_LBRC,    FR_RBRC,    KC_TRNS,    KC_TRNS,                                KC_LSFT,    KC_PSLS,    KC_KP_7,    KC_KP_8,    KC_KP_9,    KC_PAST,    KC_TRNS,
     KC_ESCAPE,  FR_LABK,    FR_RABK,    FR_LPRN,    FR_RPRN,    FR_EQL,                                                         KC_PMNS,    KC_KP_4,    KC_KP_5,    KC_KP_6,    KC_KP_PLUS, KC_F12,
     KC_TRNS,    KC_TRNS,    S(KC_LBRC), FR_LCBR,    FR_RCBR,    SLSH,       UPDIR,                                  KC_LCTL,    FR_EQL,     KC_KP_1,    KC_KP_2,    KC_KP_3,    COLC,       KC_TRNS,
-    KC_ASTR,    KC_TRNS,    KC_TRNS,    KC_TRNS,    LED_NEXT,                                                                                KC_KP_0,    KC_KP_DOT,  FR_COMM,    KC_TRNS,    KC_TRNS,
+    KC_ASTR,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,                                                                                KC_KP_0,    KC_KP_DOT,  FR_COMM,    KC_TRNS,    KC_TRNS,
                                                                             RM_HUEU,    RM_HUED,            RM_TOGG, KC_PAUSE,
                                                                                         KC_TRNS,            KC_CAPS,
                                                                 KC_TRNS,    KC_TRNS,    QK_BOOT,              KC_NUM,  KC_TRNS,   KC_TRNS
