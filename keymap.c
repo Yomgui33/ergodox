@@ -20,7 +20,6 @@
 #include "version.h"
 
 #ifdef RGB_MATRIX_ENABLE
-static uint8_t idx = 0;
 #endif
 
 tap_dance_action_t tap_dance_actions[] = {
@@ -417,12 +416,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case UPDIR:
             if (record->event.pressed) {
                 SEND_STRING("../");
-            }
-            return false;
-
-        case LED_NEXT:
-            if (record->event.pressed) {
-                idx = (idx + 1) % DRIVER_LED_TOTAL;
             }
             return false;
 
