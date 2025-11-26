@@ -4,8 +4,8 @@
 */
 #pragma once
 
-#undef DEBOUNCE
-#define DEBOUNCE 30
+// #undef DEBOUNCE
+// #define DEBOUNCE 30
 
 #undef TAPPING_TERM
 #define TAPPING_TERM 200
