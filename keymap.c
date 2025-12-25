@@ -120,8 +120,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 [SYMB] = LAYOUT_ergodox_pretty(
     KC_TRNS,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,                                  KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F11,     KC_F12,     KC_TRNS,
-    KC_TAB,     FR_HASH,    FR_EXLM,    FR_LBRC,    FR_RBRC,    KC_TRNS,    KC_TRNS,                                KC_LSFT,    KC_PSLS,    KC_KP_7,    KC_KP_8,    KC_KP_9,    KC_PAST,    KC_TRNS,
-    KC_ESCAPE,  FR_LABK,    FR_RABK,    FR_LPRN,    FR_RPRN,    FR_EQL,                                                         KC_PMNS,    KC_KP_4,    KC_KP_5,    KC_KP_6,    KC_KP_PLUS, KC_F12,
+    KC_TAB,     FR_HASH,    FR_EXLM,    FR_LBRC,    FR_RBRC,    FR_SLSH,    TILDE,                                KC_LSFT,    KC_PSLS,    KC_KP_7,    KC_KP_8,    KC_KP_9,    KC_PAST,    KC_TRNS,
+    KC_ESCAPE,  FR_LABK,    FR_RABK,    FR_LPRN,    FR_RPRN,    FR_BSLS,                                                         KC_PMNS,    KC_KP_4,    KC_KP_5,    KC_KP_6,    KC_KP_PLUS, KC_F12,
     KC_TRNS,    KC_TRNS,    S(KC_LBRC), FR_LCBR,    FR_RCBR,    SLSH,       UPDIR,                                  KC_LCTL,    FR_EQL,     KC_KP_1,    KC_KP_2,    KC_KP_3,    COLC,       KC_TRNS,
     KC_ASTR,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,                                                                                KC_KP_0,    KC_KP_DOT,  FR_COMM,    KC_TRNS,    KC_TRNS,
                                                                             RM_HUEU,    RM_HUED,            RM_TOGG, KC_PAUSE,
@@ -139,7 +139,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                 KC_TRNS,    KC_TRNS,    KC_TRNS,            KC_TRNS, KC_TRNS,   INSEC
 ),
 [ALTF] = LAYOUT_ergodox_pretty(
-    KC_TRNS,    KC_TRNS,    FR_DTIL,    FR_HASH,    FR_LCBR,    FR_LBRC,    KC_TRNS,                                 KC_TRNS,   FR_PIPE,    FR_GRV,     FR_BSLS,    FR_DCIR,    FR_AT,      FR_RCBR,
+    KC_TRNS,    FR_AMPR,    FR_PERC,    FR_HASH,    FR_LCBR,    FR_LBRC,    KC_TRNS,                                 KC_TRNS,   FR_PIPE,    FR_GRV,     FR_BSLS,    FR_DCIR,    FR_AT,      FR_RCBR,
     KC_TRNS,    KC_TRNS,    FR_EACU,    FR_EGRV,    FR_EFLX,    FR_ETRM,    KC_TRNS,                                 KC_TRNS,   KC_TRNS,    FR_UFLX,    FR_IFLX,    FR_OFLX,    KC_TRNS,    KC_TRNS,
     KC_DELETE,  FR_AGRV,    FR_AFLX,    FR_DLR,     FR_MINS,    KC_TRNS,                                                        KC_TRNS,    FR_UGRV,    FR_CCED,    KC_TRNS,    KC_TRNS,    KC_TRNS,
     KC_TRNS,    FR_Q,       LCTL(FR_X), LCTL(FR_C), LCTL(FR_V), KC_TRNS,    KC_TRNS,                                 KC_TRNS,   KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
@@ -413,6 +413,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case UPDIR:
             if (record->event.pressed) {
                 SEND_STRING("../");
+            }
+            return false;
+
+        case TILDE:
+            if (record->event.pressed) {
+                // AFNOR: AltGr+N pour ~ dead key, puis espace pour le produire
+                register_code(KC_RALT);
+                tap_code(KC_N);
+                unregister_code(KC_RALT);
+                wait_ms(10);
+                tap_code(KC_SPC);
             }
             return false;
 

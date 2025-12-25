@@ -25,6 +25,7 @@ enum custom_keycodes {
     COLC,
     COPCOL,
     QU,
+    TILDE,
 };
 
 enum tap_dance_codes {
