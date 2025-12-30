@@ -185,6 +185,7 @@ bool tap_hold(uint16_t keycode) {
         case KC_KP_9:
         case KC_PAST:
         case KC_KP_PLUS:
+        case TILDE:
             return true;
         default:
             return false;
@@ -251,6 +252,14 @@ void tap_hold_send_tap(uint16_t keycode) {
             return;
         case COPCOL:
             tap_code16(LCTL(KC_C));
+            return;
+        case TILDE:
+            // Tap: produit ~
+            register_code(KC_RALT);
+            tap_code(KC_N);
+            unregister_code(KC_RALT);
+            wait_ms(10);
+            tap_code(KC_SPC);
             return;
         default:
             tap_code16(keycode);
@@ -353,6 +362,15 @@ void tap_hold_send_hold(uint16_t keycode) {
         case KC_KP_PLUS:
             tap_code(KC_F11);
             return;
+        case TILDE:
+            // Hold: produit ~/
+            register_code(KC_RALT);
+            tap_code(KC_N);
+            unregister_code(KC_RALT);
+            wait_ms(10);
+            tap_code(KC_SPC);
+            tap_code(FR_SLSH);
+            return;
        default:
             tap_code16(S(keycode));
     }
@@ -413,17 +431,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case UPDIR:
             if (record->event.pressed) {
                 SEND_STRING("../");
-            }
-            return false;
-
-        case TILDE:
-            if (record->event.pressed) {
-                // AFNOR: AltGr+N pour ~ dead key, puis espace pour le produire
-                register_code(KC_RALT);
-                tap_code(KC_N);
-                unregister_code(KC_RALT);
-                wait_ms(10);
-                tap_code(KC_SPC);
             }
             return false;
 
