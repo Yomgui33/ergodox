@@ -254,12 +254,13 @@ void tap_hold_send_tap(uint16_t keycode) {
             tap_code16(LCTL(KC_C));
             return;
         case TILDE:
-            // Tap: produit ~
+            // Tap: produit ~/
             register_code(KC_RALT);
             tap_code(KC_N);
             unregister_code(KC_RALT);
             wait_ms(10);
             tap_code(KC_SPC);
+            tap_code(FR_SLSH);
             return;
         default:
             tap_code16(keycode);
@@ -363,13 +364,12 @@ void tap_hold_send_hold(uint16_t keycode) {
             tap_code(KC_F11);
             return;
         case TILDE:
-            // Hold: produit ~/
+            // Hold: produit ~
             register_code(KC_RALT);
             tap_code(KC_N);
             unregister_code(KC_RALT);
             wait_ms(10);
             tap_code(KC_SPC);
-            tap_code(FR_SLSH);
             return;
        default:
             tap_code16(S(keycode));
