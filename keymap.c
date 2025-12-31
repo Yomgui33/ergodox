@@ -5,8 +5,9 @@
 
 // #include <stdint.h>
 
-// Current version : 1.1.8
+// QMK version : 1.1.8
 // compile : qmk compile -kb ergodox_ez/glow -km guillaume
+// flash : qmk flash -kb ergodox_ez/glow -km guillaume
 
 #include QMK_KEYBOARD_H
 
