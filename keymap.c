@@ -6,8 +6,11 @@
 // #include <stdint.h>
 
 // QMK version : 1.1.8
+// venv : source qmk-venv/bin/activate
 // compile : qmk compile -kb ergodox_ez/glow -km guillaume
 // flash : qmk flash -kb ergodox_ez/glow -km guillaume
+
+// !!! Attention au current_password !!!
 
 #include QMK_KEYBOARD_H
 
@@ -131,9 +134,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 [NAVI] = LAYOUT_ergodox_pretty(
     KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,                                 KC_TRNS,   KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
-    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,                                 KC_TRNS,   KC_PGUP,    KC_HOME,    KC_UP,      KC_END,     KC_TRNS,    KC_TRNS,
+    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,                                 KC_PSCR,   KC_PGUP,    KC_HOME,    KC_UP,      KC_END,     KC_TRNS,    KC_TRNS,
     KC_DELETE,  KC_TRNS,    KC_TRNS,    KC_LCTL,    KC_LSFT,    KC_TRNS,                                                        KC_PGDN,    KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_TRNS,    KC_TRNS,
-    KC_TRNS,    KC_TRNS,    LCTL(FR_X), LCTL(FR_C), LCTL(FR_V), KC_TRNS,    KC_TRNS,                                 KC_TRNS,   KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
+    KC_TRNS,    KC_TRNS,    LCTL(FR_X), LCTL(FR_C), LCTL(FR_V), KC_TRNS,    KC_TRNS,                                 KC_PASS,   KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
     KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,                                                                                KC_DELETE,  KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
                                                                             KC_TRNS,    KC_TRNS,            KC_TRNS, KC_TRNS,
                                                                                         KC_TRNS,            KC_TRNS,
@@ -432,6 +435,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case UPDIR:
             if (record->event.pressed) {
                 SEND_STRING("../");
+            }
+            return false;
+
+        case KC_PASS:
+            if (record->event.pressed) {
+                SEND_STRING("current_password");
             }
             return false;
 
