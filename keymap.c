@@ -134,8 +134,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 [NAVI] = LAYOUT_ergodox_pretty(
     KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,                                 KC_TRNS,   KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
-    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,                                 KC_PSCR,   KC_PGUP,    KC_HOME,    KC_UP,      KC_END,     KC_TRNS,    KC_TRNS,
-    KC_DELETE,  BI_ES,      BI_LE,      BI_DE,      BI_RE,      BI_ENT,                                                        KC_PGDN,    KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_TRNS,    KC_TRNS,
+    KC_TRNS,    BI_ES,      BI_LE,      BI_DE,      BI_RE,      BI_ENT,     KC_TRNS,                                 KC_PSCR,   KC_PGUP,    KC_HOME,    KC_UP,      KC_END,     KC_TRNS,    KC_TRNS,
+    KC_DELETE,  KC_TRNS,    KC_TRNS,    KC_LCTL,    KC_LSFT,    KC_TRNS,                                                       KC_PGDN,    KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_TRNS,    KC_TRNS,
     KC_TRNS,    KC_TRNS,    LCTL(FR_X), LCTL(FR_C), LCTL(FR_V), KC_TRNS,    KC_TRNS,                                 KC_PASS,   KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
     KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,                                                                                KC_DELETE,  KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
                                                                             KC_TRNS,    KC_TRNS,            KC_TRNS, KC_TRNS,
