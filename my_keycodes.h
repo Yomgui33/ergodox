@@ -27,6 +27,11 @@ enum custom_keycodes {
     QU,
     TILDE,
     KC_PASS,
+    BI_ES,
+    BI_LE,
+    BI_DE,
+    BI_RE,
+    BI_ENT,
 };
 
 enum tap_dance_codes {

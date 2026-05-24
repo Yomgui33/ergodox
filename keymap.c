@@ -135,7 +135,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [NAVI] = LAYOUT_ergodox_pretty(
     KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,                                 KC_TRNS,   KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
     KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,                                 KC_PSCR,   KC_PGUP,    KC_HOME,    KC_UP,      KC_END,     KC_TRNS,    KC_TRNS,
-    KC_DELETE,  KC_TRNS,    KC_TRNS,    KC_LCTL,    KC_LSFT,    KC_TRNS,                                                        KC_PGDN,    KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_TRNS,    KC_TRNS,
+    KC_DELETE,  BI_ES,      BI_LE,      BI_DE,      BI_RE,      BI_ENT,                                                        KC_PGDN,    KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_TRNS,    KC_TRNS,
     KC_TRNS,    KC_TRNS,    LCTL(FR_X), LCTL(FR_C), LCTL(FR_V), KC_TRNS,    KC_TRNS,                                 KC_PASS,   KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
     KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,                                                                                KC_DELETE,  KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
                                                                             KC_TRNS,    KC_TRNS,            KC_TRNS, KC_TRNS,
@@ -442,6 +442,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 SEND_STRING("current_password");
             }
+            return false;
+
+        case BI_ES:
+            if (record->event.pressed) { SEND_STRING("es"); }
+            return false;
+        case BI_LE:
+            if (record->event.pressed) { SEND_STRING("le"); }
+            return false;
+        case BI_DE:
+            if (record->event.pressed) { SEND_STRING("de"); }
+            return false;
+        case BI_RE:
+            if (record->event.pressed) { SEND_STRING("re"); }
+            return false;
+        case BI_ENT:
+            if (record->event.pressed) { SEND_STRING("ent"); }
             return false;
 
     }
